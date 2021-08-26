@@ -28,9 +28,9 @@ function alunoComMaiorNota(array $turma)
 
 function alterarNotaAluno(array $turma, $nome, $novaNota){
 
-    foreach($turma as $aluno){
+    foreach($turma as $chave => $aluno){
         if($aluno["nome"] == $nome){
-           $aluno["nota"] == $novaNota;
+           $turma[$chave]["nota"] = $novaNota;
            break;
         }
     }
@@ -59,7 +59,6 @@ $alunos = [
         "nota" => 95
     ]
 ];
-
 
 //imprimir na tela a média das notas de todos os alunos
 $media = calcularMedia($alunos);
@@ -116,7 +115,6 @@ echo " Melhor estudante é " . $melhorAluno["nome"] . " com a nota " . $melhorAl
 echo "<br><br>";
 
 //escreva uma função que altere a nota de um aluno específico
-
 
 //escreva uma função que inclua a situação de todos os alunos
 
